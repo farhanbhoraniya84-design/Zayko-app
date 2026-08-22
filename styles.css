@@ -1,0 +1,163 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f9fa;
+  color: #333;
+}
+
+header {
+  background-color: #d32f2f;
+  color: white;
+  padding: 15px;
+  text-align: center;
+}
+
+.banner {
+  background-color: #fff3cd;
+  color: #856404;
+  padding: 10px;
+  text-align: center;
+  font-size: 13px;
+  border-bottom: 1px solid #ffeeba;
+}
+
+.search-box {
+  padding: 10px 15px;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.category-title {
+  padding: 10px 15px 5px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #d32f2f;
+  border-bottom: 2px solid #d32f2f;
+  margin-top: 10px;
+}
+
+.item-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  margin: 10px 15px;
+  padding: 12px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.item-info {
+  flex: 1;
+}
+
+.item-name {
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.item-price {
+  color: #2e7d32;
+  font-weight: bold;
+  margin-top: 4px;
+}
+
+.add-btn {
+  background-color: #2e7d32;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.qty-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.qty-btn {
+  background-color: #e0e0e0;
+  border: none;
+  width: 28px;
+  height: 28px;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.sticky-cart {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #2e7d32;
+  color: white;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+  box-shadow: 0 -2px 8px rgba(0,0,0,0.2);
+  cursor: pointer;
+  z-index: 99;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  z-index: 100;
+  overflow-y: auto;
+}
+
+.modal-content {
+  background: white;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 450px;
+  width: 90%;
+  box-sizing: border-box;
+}
+
+.form-group {
+  margin-bottom: 12px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 13px;
+  margin-bottom: 4px;
+  font-weight: bold;
+}
+
+.form-group input, .form-group select {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.badge {
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  color: white;
+}
+.bg-new { background-color: #ff9800; }
