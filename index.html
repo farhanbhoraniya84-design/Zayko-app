@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="gu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zayko - Fast Food Delivery</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+  <h1 style="margin:0; font-size:22px;">Zayko 🍔</h1>
+  <small>Village Fast Delivery</small>
+</header>
+
+<div class="banner">
+  ⏰ Timing: 9:00 AM - 6:00 PM | 🚚 Delivery to: Bhemal, Vajasana, Navavas, Aderan
+</div>
+
+<div class="search-box">
+  <input type="text" id="searchInput" placeholder="શોધો (Search item)...">
+</div>
+
+<div id="menuContainer"></div>
+
+<!-- Sticky Bottom Cart Button -->
+<div id="stickyCart" class="sticky-cart" style="display:none;" onclick="openCart()">
+  <span id="cartCount">0 Items</span>
+  <span>View Cart 🛒</span>
+  <span id="cartTotal">₹0</span>
+</div>
+
+<!-- Cart & Checkout Modal -->
+<div id="cartModal" class="modal">
+  <div class="modal-content">
+    <h2>Your Cart</h2>
+    <div id="cartItemsList"></div>
+    <hr>
+    
+    <h3>Delivery Details</h3>
+    <div class="form-group">
+      <label>Customer Name *</label>
+      <input type="text" id="cName" placeholder="તમારું નામ">
+    </div>
+    <div class="form-group">
+      <label>Mobile Number (10 Digits) *</label>
+      <input type="tel" id="cMobile" placeholder="9876543210" maxlength="10">
+    </div>
+    <div class="form-group">
+      <label>Select Village *</label>
+      <select id="cVillage">
+        <option value="">Choose Village</option>
+        <option value="Bhemal">Bhemal</option>
+        <option value="Vajasana">Vajasana</option>
+        <option value="Navavas">Navavas</option>
+        <option value="Aderan">Aderan</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>Full Address *</label>
+      <input type="text" id="cAddress" placeholder="મકાન નંબર, શેરી, વગેરે">
+    </div>
+
+    <h3>Payment Method</h3>
+    <div class="form-group">
+      <label><input type="radio" name="payment" value="ONLINE" checked onclick="togglePayment()"> Online Payment (UPI / PhonePe / GPay)</label>
+      <label><input type="radio" name="payment" value="COD" onclick="togglePayment()"> Cash on Delivery (COD)</label>
+    </div>
+
+    <div id="onlineInfo" style="background:#E3F2FD; padding:10px; border-radius:6px; margin-bottom:10px;">
+      <p style="margin:0; font-size:12px;">Please pay using PhonePe / Google Pay / UPI to <b>7435911364</b></p>
+      <div class="form-group" style="margin-top:8px;">
+        <input type="text" id="cUtr" placeholder="Payment Reference / UTR (Optional)">
+      </div>
+    </div>
+
+    <div style="background:#f5f5f5; padding:10px; border-radius:6px;">
+      <div>Subtotal: ₹<span id="subTotal">0</span></div>
+      <div>Delivery Charge: ₹<span id="shipCharge">15</span></div>
+      <div id="codRow" style="display:none;">COD Charge: ₹20</div>
+      <hr>
+      <div style="font-weight:bold; font-size:16px;">Final Total: ₹<span id="finalTotal">0</span></div>
+    </div>
+
+    <div style="margin-top:15px; display:flex; gap:10px;">
+      <button onclick="closeCart()" style="width:50%; padding:10px; border:1px solid #ccc; background:#fff; border-radius:6px;">Cancel</button>
+      <button onclick="placeOrder()" style="width:50%; padding:10px; background:#2E7D32; color:white; border:none; border-radius:6px; font-weight:bold;">Confirm Order</button>
+    </div>
+  </div>
+</div>
+
+<script type="module" src="app.js"></script>
+</body>
+</html>
