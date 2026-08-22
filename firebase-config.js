@@ -1,21 +1,22 @@
-// Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+import { getDatabase, ref, push, set, onValue, update } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js";
+import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
+
+// Updated Firebase Config (Singapore Database URL ke saath):
 const firebaseConfig = {
-  apiKey: "AIzaSyClZwyD5v5r-JfDuIGGmtxDBJeK6ur3uss",
+  apiKey: "AIzaSyClZwyD5v5r-JfDuIGGmtxD...", // Apni complete apiKey rakhein
   authDomain: "zayko-5be72.firebaseapp.com",
+  databaseURL: "https://zayko-5be72-default-rtdb.asia-southeast1.firebasedatabase.app",
   projectId: "zayko-5be72",
   storageBucket: "zayko-5be72.firebasestorage.app",
   messagingSenderId: "985928697859",
-  appId: "1:985928697859:web:2364acc498a9fda18c2636",
+  appId: "1:985928697859:web:2364acc498...", // Apni complete appId rakhein
   measurementId: "G-NPCSTNMY8E"
 };
 
-// Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
+const db = getDatabase(app);
+const auth = getAuth(app);
+
+export { db, ref, push, set, onValue, update, auth, signInWithEmailAndPassword };
